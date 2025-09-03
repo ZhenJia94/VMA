@@ -4,5 +4,5 @@
 
 gdown https://drive.google.com/uc?id=1smzVvcOQ24uzsqya3Lh2LaiBwgP3fH6N
 unzip -d ./data/nyc labels.zip
-rm -rf ./labels.zip
+# rm -rf ./labels.zip
 

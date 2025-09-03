@@ -9,6 +9,7 @@ import torch
 from mmdet.datasets.pipelines import to_tensor
 from shapely.geometry import LineString, box, MultiLineString, Polygon, MultiPolygon
 from shapely.geometry.collection import GeometryCollection
+import os
 from os import mkdir, path as osp
 import mmcv
 from PIL import Image, ImageDraw
@@ -287,11 +288,15 @@ class iCurb_Dataset(Dataset):
             json_list = [x+'.json' for x in test_list]
         else:
             json_list = [x+'.json' for x in train_list]
+        files_list = os.listdir(image_path)
 
         annotation_dict={}
         for jsonf in json_list:
             with open(osp.join(seq_path, jsonf), 'r') as f:
                 seq_list = json.load(f)
+            img_name = jsonf[:-4]+'tiff'
+            if img_name not in files_list:
+                continue
             instances= []
             for area in seq_list: 
                 instances.append(area['seq'])

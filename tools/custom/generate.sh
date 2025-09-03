@@ -1,1 +1,3 @@
-python generate_line_final_from_origin.py data/sd_data/line/origin_data/line_data_6k.json data/sd_data/line/origin_data data/sd_data/line/cropped_data --visualize
+python ./tools/custom/generate_line_final_from_origin.py data/sd_data/line/origin_data/line_data_6k.json data/sd_data/line/origin_data data/sd_data/line/cropped_data --visualize
+python ./tools/custom/generate_box_final_from_origin.py data/sd_data/box/origin_data/box_data_6k.json data/sd_data/box/origin_data data/sd_data/box/cropped_data --visualize
+python ./tools/custom/generate_freespace_final_from_origin.py data/sd_data/box/origin_data/box_data_6k.json data/sd_data/freespace/origin_data data/sd_data/freespace/cropped_data --visualize
